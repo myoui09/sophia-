@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Monthsary My Love</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Fredoka', 'Quicksand', sans-serif;
+        }
+
+        body {
+            background-color: #fff0f5;
+            background-image: 
+                radial-gradient(#ffb6c1 15%, transparent 16%),
+                radial-gradient(#ffccd5 15%, transparent 16%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .kawaii-card {
+            width: 100%;
+            max-width: 520px;
+            background: #ffffff;
+            border-radius: 35px;
+            border: 4px solid #ff9ebb;
+            box-shadow: 0 15px 30px rgba(255, 158, 187, 0.3);
+            padding: 30px 25px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Cute Ribbon Header */
+        .header-ribbon {
+            background: #ff85a1;
+            color: #ffffff;
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 12px rgba(255, 133, 161, 0.3);
+            margin-bottom: 12px;
+            border: 2px solid #ffffff;
+        }
+
+        .title {
+            color: #ff477e;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #ff9ebb;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .slides-container {
+            position: relative;
+            min-height: 380px;
+        }
+
+        .slide {
+            display: none;
+            background: #fff8fa;
+            border: 3px dashed #ffb6c1;
+            border-radius: 25px;
+            padding: 28px 22px;
+            animation: kawaiiPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            position: relative;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffe6ed;
+            color: #ff477e;
+            border: 2px solid #ff85a1;
+            padding: 3px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .slide-text {
+            color: #5a4b51;
+            font-size: 14.5px;
+            line-height: 1.8;
+            text-align: justify;
+            margin-top: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+        }
+
+        .corner-decor {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #ffb6c1;
+            border-radius: 50%;
+        }
+
+        .top-left { top: 12px; left: 12px; }
+        .top-right { top: 12px; right: 12px; }
+        .bottom-left { bottom: 12px; left: 12px; }
+        .bottom-right { bottom: 12px; right: 12px; }
+
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding: 0 10px;
+        }
+
+        .btn {
+            background: #ff85a1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #ff477e;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #ff477e;
+        }
+
+        .btn:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #ff477e;
+        }
+
+        .btn:disabled {
+            background: #ffd1dc;
+            box-shadow: 0 6px 0 #fca3b7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #ffd1dc;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ff477e;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        @keyframes kawaiiPop {
+            0% { opacity: 0; transform: scale(0.9) translateY(15px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kawaii-card">
+        <div class="header-ribbon">Happy 1st Monthsary My Love</div>
+        <h1 class="title">Happy 1st Monthsary</h1>
+        <p class="subtitle">Click Next to read my letter, Baby!</p>
+
+        <div class="slides-container">
+            
+            <!-- SLIDE 1 -->
+            <div class="slide active" id="slide1">
+                <div class="corner-decor top-left"></div>
+                <div class="corner-decor top-right"></div>
+                <div class="slide-badge">Part 1 of 3</div>
+                <p class="slide-text">
+                    Happy 1st monthsary baby, thank you baby because you came into my life, when you arrived everything changed and my happiness came back, you are the only one I want to be with for the rest of my life and no one else, you are the only one I will love no matter what happens, you are the only handsome guy in my eyes which is why I love you so much because you have everything I want in a man your understanding nature and you are so kind plus you are so gentlemanly to me it makes me fall in love with you even more baby, I have nothing more to ask for except you, also even when I get upset with you you never leave and you ask me first if I want space whenever we have a misunderstanding, that is why I love you so much because you never get mad at me and you never get tired of me even when I am moody towards you and you are not a toxic boyfriend, thank you baby for treating me right I am so very happy because you came into my life I hope baby we last forever and not just a hope but a real forever together for life until death.
+                </p>
+                <div class="corner-decor bottom-left"></div>
+                <div class="corner-decor bottom-right"></div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="slide" id="slide2">
+                <div class="corner-decor top-left"></div>
+                <div class="corner-decor top-right"></div>
+                <div class="slide-badge">Part 2 of 3</div>
+                <p class="slide-text">
+                    I love everything about you including your smile and your face as well as your voice which shines so brightly I love it so much along with your hands and your lips, you know baby I am also so lucky to have you baby so I hope nothing changes between us I want you to feel all the love I have to give, you are such a caring boyfriend, I thought I was just dreaming but it turned out to be real because I am so lucky with the princess treatment you give me which I know is not like others baby, because even your family is so kind to me including your sibling, thank you by the way for introducing me to them baby I love you.
+                </p>
+                <div class="corner-decor bottom-left"></div>
+                <div class="corner-decor bottom-right"></div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="slide" id="slide3">
+                <div class="corner-decor top-left"></div>
+                <div class="corner-decor top-right"></div>
+                <div class="slide-badge">Part 3 of 3</div>
+                <p class="slide-text">
+                    There is no perfect person baby right which is why for me you are perfect because we are a perfect match, I promise you I will make you happy for the rest of my life forever baby, I will not break my promise to you, this is truly real now, I really love you so much, thank you baby for loving me so much more than I ever expected, I love you so much my baby.
+                </p>
+                <div class="corner-decor bottom-left"></div>
+                <div class="corner-decor bottom-right"></div>
+            </div>
+
+        </div>
+
+        <div class="nav-controls">
+            <button class="btn" id="prevBtn" onclick="changeSlide(-1)" disabled>Back</button>
+            <div class="slide-dots">
+                <div class="dot active" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+                <div class="dot" id="dot3"></div>
+            </div>
+            <button class="btn" id="nextBtn" onclick="changeSlide(1)">Next</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function changeSlide(direction) {
+            document.getElementById(`slide${currentSlide}`).classList.remove('active');
+            document.getElementById(`dot${currentSlide}`).classList.remove('active');
+
+            currentSlide += direction;
+
+            document.getElementById(`slide${currentSlide}`).classList.add('active');
+            document.getElementById(`dot${currentSlide}`).classList.add('active');
+
+            document.getElementById('prevBtn').disabled = (currentSlide === 1);
+            
+            if (currentSlide === totalSlides) {
+                document.getElementById('nextBtn').innerText = 'Love You!';
+                document.getElementById('nextBtn').disabled = true;
+            } else {
+                document.getElementById('nextBtn').innerText = 'Next';
+                document.getElementById('nextBtn').disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
